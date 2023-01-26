@@ -1,0 +1,87 @@
+*{
+    box-sizing: border-box;
+    /* to make the small-container's padding set correctly. */
+}
+.big-container{
+    position:relative;
+    display: inline-block;
+    overflow: hidden;
+    /* this means it should be only the whole width of the chilren (here is canvas not the small-container ) that inside it, because canvas is block */
+}
+.small-container{
+    position:absolute;
+    display:flex;
+    width:100%;
+    /* max-width: 1024px; 这个可以通过parent的inline-block实现*/ 
+    align-items: center;
+    padding:20px;
+}
+.playerHealth-container{
+    position:relative;
+    display:flex;
+    width:100%;
+    justify-content: flex-end;
+    border:5px solid white;
+}
+.player-health{
+    background-color: #AAA;
+    height:30px;
+    width:100%;
+}
+.playerHealth-bg{
+    position:absolute;
+    background-color:rgb(235, 187, 85);
+    top:0;
+    right:0;
+    bottom:0;
+    width:100%;
+    /* 此处把left去掉换成width100%是为了让他的flex-end生效 */
+}
+
+.timer{
+    background-color: rgb(240, 240, 170);
+    width:100px;
+    height: 50px;
+    flex-shrink: 0;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-size:2em;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+
+.tie{
+    position:absolute;
+    font-size:2rem;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    word-spacing: .3em;
+    letter-spacing: .1em;
+    color:rgb(255, 255, 255);
+    align-items: center;
+    justify-content: center;
+    top:0;
+    right:0;
+    bottom: 0;
+    left:0;
+    display:none;
+     /* 这四个0为了能够占满parent！否则flex及其参数不生效 */
+}
+
+.enemyHealth-container{
+    position:relative;
+    width:100%;
+    border:5px solid white;
+}
+.enemy-health{
+    background-color: #AAA;
+    height:30px;
+}
+.enemyHealth-bg{
+    position:absolute;
+    background-color:rgb(221, 114, 110);
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+    /* 这四个0为了能够占满parent，注意此处把宽高设置为了100%则行不通！！ */
+}
