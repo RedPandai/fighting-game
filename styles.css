@@ -57,12 +57,13 @@
     word-spacing: .3em;
     letter-spacing: .1em;
     color:rgb(255, 255, 255);
-    align-items: center;
-    justify-content: center;
-    top:0;
+    top:20%;
+    /* align-items: center;
+    justify-contddent: center; */
+    /* top:0;
     right:0;
     bottom: 0;
-    left:0;
+    left:0; */
     display:none;
      /* 这四个0为了能够占满parent！否则flex及其参数不生效 */
 }
@@ -84,4 +85,38 @@
     left:0;
     bottom:0;
     /* 这四个0为了能够占满parent，注意此处把宽高设置为了100%则行不通！！ */
+}
+
+.playAgain-container{
+    position:absolute;
+    background-color: rgb(198, 228, 159);
+    align-items: center;
+    justify-content: center;
+    opacity: 95%;
+    display:none;
+    top:20%;
+    left:30%;
+    flex-direction: column;
+    padding:2rem;
+    width:400px;
+    height:300px;
+    border-radius: 10px;
+    border:2px solid white;
+    
+}
+.playAgain-container h2{
+    color:rgb(104, 99, 90);
+}
+.playAgainbtn{
+    padding:1rem;
+    border:none;
+    border-radius: 10px;;
+    font-size: 1.2rem;
+    background-color: rgb(243, 166, 94);
+    color:white;
+}
+.playAgainbtn:hover{
+    background-color: rgb(201, 79, 79);
+    box-shadow:0 0 0 2px rgb(87, 58, 58);
+    cursor: pointer;
 }

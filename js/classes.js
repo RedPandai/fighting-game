@@ -94,6 +94,7 @@ class Fighter extends Sprite {
     this.framesHold = 7;
     this.sprites = sprites;
     this.dead = false;
+    this.tie = false;
 
     for (let sprite in this.sprites) {
       sprites[sprite].image = new Image();

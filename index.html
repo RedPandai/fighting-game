@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dog-Cat-Fighting-Game</title>
+    <title>Dog VS Cat</title>
 
     <script src="js/utils.js" defer></script>
     <script src="js/classes.js" defer></script>
     <script src="./index.js" defer></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
-
+    
+    <link rel="icon" type="image/svg+xml" href="imgs/LogoSmall.PNG" />
     <link href="./styles.css" rel="stylesheet"/>
 </head>
 <body>
@@ -28,7 +29,12 @@
             </div>
         </div>
         <div></div>
-        <div class="tie"></div>
+        <div class="playAgain-container">
+            <h2>Play Agian?</h2>
+            <button class="playAgainbtn" onclick=document.location.reload()>Yes</button>
+            <div class="tie"></div>
+        </div>
+        
         <canvas></canvas> 
     </div>
 

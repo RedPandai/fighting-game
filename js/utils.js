@@ -15,11 +15,19 @@ function determineWinner({ player, enemy, timerId }) {
   document.querySelector(".tie").style.display = "flex";
   if (player.health === enemy.health) {
     document.querySelector(".tie").innerHTML = "Tie";
+    player.tie = true;
+    enemy.tie = true;
+    playagain();
   } else if (player.health > enemy.health) {
     document.querySelector(".tie").innerHTML = "The Dog Wins!";
+    playagain();
   } else if (player.health < enemy.health) {
     document.querySelector(".tie").innerHTML = "The Cat Wins!";
+    playagain();
   }
+}
+function playagain() {
+  document.querySelector(".playAgain-container").style.display = "flex";
 }
 
 let timer = 60;

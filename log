@@ -1,0 +1,7 @@
+20230126: 
+0. designed background and background bush animation
+0. designed the attack animation based on other's character design
+0. add jump limit for only once per time
+1. add play again UI and button
+2. add stop dead character's control function 
+pendings: need to work on control within canvas width

@@ -81,7 +81,7 @@ const player = new Fighter({
 });
 
 const enemy = new Fighter({
-  position: { x: 400, y: 100 },
+  position: { x: 750, y: 100 },
   velocity: {
     x: 0,
     y: 0,
@@ -151,6 +151,7 @@ const keys = {
 
 decreaseTimer();
 
+const border = canvas.width - player.width - 100;
 function animate() {
   window.requestAnimationFrame(animate);
   c.fillStyle = "black";
@@ -175,7 +176,7 @@ function animate() {
   } else {
     player.switchSprite("idle");
   }
-  //jumping
+  //jump
   if (player.velocity.y < 0) {
     player.switchSprite("jump");
   } else if (player.velocity.y > 0) {
@@ -235,13 +236,18 @@ function animate() {
   if (player.health <= 0 || enemy.health <= 0) {
     determineWinner({ player, enemy, timerId });
   }
+  //set the play boundary
+  if (player.position.x < -120) player.position.x = -120;
+  if (player.position.x > border) player.position.x = border;
+  if (enemy.position.x < -120) enemy.position.x = -120;
+  if (enemy.position.x > border) enemy.position.x = border;
 }
 
 animate();
 
 //move characters
 window.addEventListener("keydown", (event) => {
-  if (!player.dead) {
+  if (!player.dead && !player.tie) {
     switch (event.key) {
       case "d":
         keys.d.pressed = true;
@@ -260,7 +266,7 @@ window.addEventListener("keydown", (event) => {
     }
   }
 
-  if (!enemy.dead) {
+  if (!enemy.dead && !enemy.tie) {
     switch (event.key) {
       case "ArrowRight":
         keys.ArrowRight.pressed = true;
